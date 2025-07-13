@@ -16,3 +16,35 @@ To use the script:
 
 To test if it is working use xeyes and see if the eyes move when the mouse if over the app as suggested
 by: <https://medium.com/@bugaevc/how-to-easily-determine-if-an-app-runs-on-xwayland-or-on-wayland-natively-8191b506ab9a>
+
+## Suggested Configs
+
+The following section provides suggestions for where to configure applications, these options were typically tested to work on PopOS 24.04 but any updates to an application may change how it works so you maybe need to still do some trial and errorh
+
+This is not an exhausted list just specific apps that have been tested
+
+### Flatpak socket override
+
+The following apps work when added to `FLATPAKS` in `app.conf` and overriding their flatpak sockets:
+
+- Joplin: `net.cozic.joplin_desktop`
+- Portal for Teams: `com.github.IsmaelMartinez.teams_for_linux`
+- Slack: `com.slack.Slack`
+
+### Flatpak .desktop override
+
+The following have their .desktop file updated and work when added to `DESKTOP_FLATPAKS` in `app.conf`:
+
+- Brave Browser: `com.brave.Browser.desktop`
+- Discord: `com.discordapp.Discord`
+- Google Chrome: `com.google.Chrome`
+- LogSeq: `com.logseq.Logseq`
+- Mattermost: `com.mattermost.Desktop`
+- Signal: `org.signal.Signal`
+- Ungoogled Chrome: `io.github.ungoogled_software.ungoogled_chromium`
+- Visual Studio Code: `com.visualstudio.code`
+
+### Custom .desktop override
+
+Generally customer .desktop files and applications stored from your system repository are best suited to the `DESKTOP_FILES`
+list in `app.conf`.
